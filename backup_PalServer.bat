@@ -5,19 +5,19 @@ rem 纯净输出
 rem 设置utf-8可以正常显示中文
 chcp 65001 > nul
 
-rem 获取当前日期和时间，并将其格式为 yyyy-MM-dd_HH-mm-ss
+rem 获取当前日期和时间，并将其格式为 yyyy-MM-dd-HH_mm_ss
 for /f "usebackq tokens=1,2 delims==" %%G in (`wmic OS Get LocalDateTime /VALUE`) do if '.%%G.'=='.LocalDateTime.' set datetime=%%H
 set "datetime=%datetime:~0,4%-%datetime:~4,2%-%datetime:~6,2%-%datetime:~8,2%_%datetime:~10,2%_%datetime:~12,2%"
 set "datetime=%datetime:.=-%"
 rem echo %datetime%
 
-rem 目标文件夹
+rem PalServer存档文件夹
 set "sourceFolder=D:\Apps\Steam\steamapps\common\PalServer\Pal\Saved"
 rem 压缩后的文件
 set "destinationZip=D:\PalServer-backup\Saved-bk%datetime%.zip"
 rem 备份的位置
 set "destinationCopyTo=Y:\share\server_backups\PalServer-backup"
-rem 本脚本的日志保存位置 >> %backuperLogFile%
+rem 本脚本的日志输出位置 >> %backuperLogFile%
 set "backuperLogFile=D:\PalServer-backup\backup.log"
 
 rem 打印设置信息
