@@ -13,9 +13,9 @@ rem echo %datetime%
 
 rem PalServer存档文件夹
 set "sourceFolder=D:\Apps\Steam\steamapps\common\PalServer\Pal\Saved"
-rem 压缩后的文件
+rem 本地备份
 set "destinationZip=D:\PalServer-backup\Saved-bk%datetime%.zip"
-rem 备份的位置
+rem 远程备份
 set "destinationCopyTo=Y:\share\server_backups\PalServer-backup"
 rem 本脚本的日志输出位置 >> %backuperLogFile%
 set "backuperLogFile=D:\PalServer-backup\backup.log"
